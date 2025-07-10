@@ -1,18 +1,1 @@
-# Spider_ML_Task2A
-
-sequence of events - 
-1.loaded the env file for API key
-2.defined path for pdfs
-3.defined fucntion to extract content from pdf
-4.fucntion to load the document and extract content using above fucntion (all data is now in a string)
-5.split the text into chunks 
-6.used pretrained embedding model to convert these chunks to vectors and save the vector DB to pkl file(vector DB will have a vector for each chunk now)
-7. when we call this model, the pretrained transformer is used to geenrate a vector for it and sotred in DB, FAISS (Facebook AI Similarity Search) is a library that creates efficient vector databases for fast similarity search. It stores       document chunks as vectors and quickly finds the most similar ones when you search, enabling semantic document retrieval for RAG systems.
-8.then defined the fucntion to load the db
-9.function to retrieve top 5 chunks from DB
-10.loaded LLM using groq API key for text generation
-11.defined function to  generate answer - joined all text from texts into one string(context_text), created structured prompts with system instructions and user questions, LLM is tolf to only answer questions based on context(no hallucination)(hallucination in LLMs means the model generates information that sounds plausible but is actually made up or not based on the provided context)
-
-12.run all the functions to creat pkl file, then commented it out
-13.run the functions after that to generate answer
-14.used streamlit in app.py to call all functions and form interface
+<pre><code> ### Sequence of Events 1. Loaded the `.env` file for the API key 2. Defined path for PDFs 3. Defined function to extract content from PDFs 4. Defined function to load documents and extract content using the above function (all data is now in a string) 5. Split the text into chunks 6. Used a pretrained embedding model to convert these chunks to vectors and saved the vector DB to a `.pkl` file (vector DB now contains a vector for each chunk) 7. When we call this model, the pretrained transformer generates a vector for the query. FAISS (Facebook AI Similarity Search) is a library that creates efficient vector databases for fast similarity search. It stores document chunks as vectors and quickly finds the most similar ones, enabling semantic document retrieval for RAG systems. 8. Defined the function to load the vector DB 9. Defined the function to retrieve the top 5 chunks from the DB 10. Loaded the LLM using the Groq API key for text generation 11. Defined a function to generate answers: - Joined all text from the documents into one `context_text` string - Created structured prompts with system instructions and user question - LLM is told to only answer based on context (no hallucination) - *Hallucination* in LLMs means the model generates information that sounds plausible but is actually made up or not based on the provided context 12. Ran all the functions to create the `.pkl` file, then commented it out 13. Ran the rest of the functions to generate an answer 14. Used Streamlit in `app.py` to call all functions and build the interface </code></pre>
